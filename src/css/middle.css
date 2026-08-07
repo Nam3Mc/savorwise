@@ -1,0 +1,65 @@
+/* ============================================
+   TABLET.CSS
+   Recipe Card – Tablet (768px – 1024px)
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .recipe-card {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .recipe-card__title {
+    grid-column: 1 / -1;   /* full width on top */
+    font-size: 1.8rem;
+  }
+
+  .recipe-card__image {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    aspect-ratio: 4 / 3;
+  }
+
+  .recipe-card__ingredients {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    align-self: start;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0;
+  }
+
+  .recipe-card__ingredient {
+    white-space: normal;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+/* ============================================
+   TABLET.CSS - Ingredient Grid (Tablet)
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .ingredient-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .ingredient-card__button {
+    min-height: 55px;
+    border-radius: 8px;
+  }
+
+  .ingredient-card__emoji {
+    font-size: 1.8rem;
+  }
+
+  .ingredient-card__name {
+    font-size: 0.7rem;
+  }
+}

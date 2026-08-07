@@ -1,0 +1,183 @@
+/* ============================================
+   DESKTOP LAYOUT (≥ 1024px)
+   ============================================ */
+
+/* Grid becomes two columns */
+.results-grid {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Recipe list takes ~35% and stays sticky */
+.recipe-list {
+  flex: 0 0 35%;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: sticky;
+  top: var(--spacing-md);
+}
+
+/* Details take the remaining space */
+.recipe-detail {
+  flex: 1;
+}
+
+/* Typography adjustments for larger screens */
+.navbar__brand {
+  font-size: 2.2rem;
+  gap: var(--spacing-md);   /* More space between logo and text */
+}
+
+.logo {
+  height: 2.5rem;           /* Slightly larger logo */
+}
+
+.recipe-list__title {
+  font-size: 1.6rem;
+}
+
+.recipe-detail__title {
+  font-size: 2rem;
+}
+
+/* More spacing between search elements */
+.search-form__input-wrapper {
+  border-radius: 12px;
+}
+
+.search-form__input {
+  padding: var(--spacing-lg);
+  font-size: 1.1rem;
+}
+
+.search-form__button {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  font-size: 1.1rem;
+}
+
+/* Improve nutrition table readability */
+.nutrition-facts__table {
+  font-size: 1rem;
+}
+
+
+/* Desktop: sidebar on the left, takes about 30% */
+.results-grid {
+    display: grid;
+    grid-template-columns: 30% 1fr;   /* sidebar + rest */
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+    margin-bottom: 0;
+    position: sticky;
+    top: var(--spacing-md);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.recipe-list {
+    grid-column: 2 / 3;
+    /* you can also stack recipe-list and recipe-detail vertically */
+}
+
+.recipe-detail {
+    grid-column: 2 / 3;
+}
+
+/* ============================================
+   DESKTOP.CSS
+   Recipe Card – Desktop (≥ 1025px)
+   ============================================ */
+
+@media (min-width: 1025px) {
+  .recipe-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+    border-radius: 16px;
+  }
+
+  .recipe-card__title {
+    font-size: 2.2rem;
+    grid-column: 1 / -1;
+  }
+
+  .recipe-card__image {
+    aspect-ratio: 16 / 10;
+    border-radius: 12px;
+  }
+
+  .recipe-card__ingredients {
+    gap: 0.5rem;
+  }
+
+  .recipe-card__ingredient {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+}
+/* ============================================
+   DESKTOP.CSS - Ingredient Grid (Desktop)
+   Se convierte en una lista vertical
+   ============================================ */
+
+@media (min-width: 1025px) {
+  .ingredient-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ingredient-card {
+    display: flex;
+    width: 100%;
+  }
+
+  .ingredient-card__button {
+    display: flex;
+    flex-direction: row;          /* Emoji a la izquierda, nombre a la derecha */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    width: 100%;
+    min-height: 38px;            /* Altura compacta */
+    background-color: var(--bg-surface, #FFFFFF);
+    border: 1px solid var(--border-subtle, #E2E8F0);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    color: var(--text-primary, #1A202C);
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    aspect-ratio: auto;          /* Sin forzar cuadrado */
+  }
+
+  .ingredient-card__button:hover {
+    background-color: var(--bg-main, #F3F4F6);
+    border-color: var(--accent-primary, #10B981);
+    transform: translateX(2px);
+  }
+
+  .ingredient-card__emoji {
+    font-size: 1.4rem;           /* Tamaño proporcionado */
+    line-height: 1;
+    flex-shrink: 0;              /* No se encoge */
+  }
+
+  .ingredient-card__name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary, #1A202C);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    /* Si es muy largo, corta con ... */
+  }
+}

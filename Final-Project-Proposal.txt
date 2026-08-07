@@ -1,0 +1,189 @@
+Overview:
+Recipe Finder with Nutritional Facts
+Users search by ingredient or dish name to get a list of recipes. 
+When they select one, they see cooking instructions and a nutritional 
+breakdown (calories, protein, carbs).
+
+Target Audience:
+The Application is targetting the homemakers arround the work and cooking
+lovers, that wants to locate recipes by seaching ingredients or specific
+recipes, with it nutritional information to eat healty and fun.
+
+Major Functions:
+
+FetchRecipeByIngredient: This function will capture the ingredient 
+seach in the API for recipes that contain that ingredient and store 
+the data.
+
+SearchByRecipe: The fucntion taht receive a recipe name and request
+the recipe from the API and store the data.
+
+RenderRecipes: A function with a template that will render dinamicaly
+the recipes as a link to go to the recipe details page.
+
+SearchBar: This function will select the search bar, will verify a check
+box for searchin by ingredient or by recipe and call the respective fetch
+function and the RenderRecipes to display dinamically when user search
+
+RenderRecipeDetails: This fucntion will use a template to render the 
+recipe data, and set a link for each ingrediente setting the ingredient
+mame as word for seaching the nutritional data to be render, Including
+a list of ingredients.
+
+FetchNutritionalData: A function to fetch the nutritional data of the 
+recipe and store the data.
+
+RenderNutritionalFats: Will use a template to render the fetched data
+of the recipe.
+
+FetchIngredientFats: This function will fetch the ingredient nutritional
+data and store the data.
+
+RenderIngredientFats: This function will call the fecth ingredient fats
+when clicking the link genetated by rendering the recipe.
+
+SaveRecipe: A function that will store the recipe that the user wants
+to save for later.
+
+Recipe Class: it will receive as parameter, Ingredient or RecipeName
+
+Wireframes:
+                  DESKTOP
+____________________________________________
+|                  NAVBAR                   |
+|___________________________________________|
+|       _______________________________     |
+|      |________SERACHNAR_____|_BUTTON_|    |
+|          |_INGREDIENT__|_RECIPE_|         |
+|___________________________________________|
+|           |                               |
+|           |                               |
+|   LIST    |                               |
+|   OF      |  SUGESTED RECIPES             |
+|INGREDIENTS|                               |
+|   CARD    |                               |
+|   WITH    |                               |
+|   FATS    |                               |
+|           |                               |
+|           |                               |
+|           |                               |
+|___________|_______________________________|
+|                                           |
+|                  FOOTER                   |
+|___________________________________________|
+
+             MOBILE
+
+ _______________________________
+|           NAVBAR              |
+|_______________________________|
+|                               |
+|            SEARCHBAR          |
+|_______________________________|
+|  LIST OF INGREDIENT AS LINKS  |
+|                               |
+|   LIST OF SUDGESTED RECIPES   |
+|                               |
+|                               |
+|                               |
+|                               |
+|                               |
+|                               |
+|_______________________________|
+|             FOOTER            |
+|_______________________________|
+
+
+External Data:
+https://www.themealdb.com/documentation#v1
+json retuned: 
+"idMeal": "52771",
+      "strMeal": "Spicy Arrabiata Penne",
+      "strMealAlternate": null,
+      "strCategory": "Vegetarian",
+      "strArea": "Italian",
+      "strCountry": "Italy",
+      "strInstructions":
+
+https://platform.fatsecret.com/
+json returned: 
+NAME	DESCRIPTION
+auth_secret	Oauth secret key
+auth_token	Oauth key
+exercise_id	Unique exercise identifier
+food_category_id	Unique identifier of the food category entry
+food_entry_id	Unique identifier of the food diary entry
+food_id	Unique food identifier
+recipe_id	Unique recipe identifier
+recipe_types	This option filters by specified recipe types and should be provided as a comma separated string of recipe type names. The values are provided via the api: Recipe Types Get All
+saved_meal_id	Unique saved meal identifier
+saved_meal_item_id	Unique saved meal item identifier
+serving_id	Unique serving identifier
+
+Modules: 
+
+API module: This module will have all the task for requesting and store 
+the data, and organized it for being rendered into the page.
+
+UI module: developing all the views and html, for each page section.
+
+Rendering Dinamicaly module: in this module i will work directly in the 
+dinamical components that will be inserted by js fuctions into the htmls.
+
+CSS module: .handled the animation and the profetional desing for the 
+page.
+
+Graphic Identity:
+
+Color Schema
+60% Dominant Backgrounds
+--bg-main: #FAFAFA;       Soft Off-White for main canvas */
+--bg-surface: #FFFFFF;    Pure White for recipe cards, sidebar, 
+30% Structural & Typography
+--text-primary: #1A202C;  Deep Charcoal for high-legibility headings & body
+--text-muted: #718096;    Muted Slate for secondary details & nutrition labels
+--border-subtle: #E2E8F0; Clean light gray borders for card separation 
+10% Action & Accent
+--accent-primary: #10B981; Fresh Sage Green for Search CTA, active links, badges
+--accent-hover: #059669;   Darker emerald tone for button hover states
+
+Typography
+Primary Body Font: Inter (Sans-Serif)
+Used for: Ingredient lists, nutrition tables, body text, search bar, and buttons.
+Heading & Title Font: Playfair Display (Serif)
+Used for: Navbar brand logo, recipe names, section titles (h1, h2, h3).
+
+Time Line:
+
+Week 05:
+* complete the full html UI module with harcoded information
+* Add basic CSS rules and give it a good appearence 
+* Organize the API request and select the information taht will be displayed.
+
+Week 06:
+* Develop the data storage in its totality 
+* Implementation of the dinamical rendering of the stored data 
+* Handled events fuctions in js that provides the user Experience 
+
+Week 07: 
+* Implement favorite recipe saving
+* Complete the profecional CSS rules and design
+* Test Application and solve any issue taht could be present 
+* Deploy and submit the project
+
+Project Planning:
+https://trello.com/b/kAST5Dd6/savorwise
+
+Challenges:
+Will be complicated to hanlded 2 APIs at the same time 
+specialy to connect them correctly with the due funcitionality to
+display the desired data wtihout issue.
+
+
+
+Please make a copy of your OAuth 2.0 Client Secret as this is your only opportunity to view it. It cannot be retrieved later.
+
+Client ID: 0e60c2d6b7804605bebbff0278d3c411 
+Client Secret: 95c16506c08542aa889fef1a560f3f9d
+The URL to make API calls is https://platform.fatsecret.com/rest/server.api
+token barrer: eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk0Q0NGMUU4RTI4RUM3RkM4QTc2RTcyNTM4M0E4RjM0OUU3MUUzRjAiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJsTXp4Nk9LT3hfeUtkdWNsT0RxUE5KNXg0X0EifQ.eyJuYmYiOjE3ODYwMDEyNzIsImV4cCI6MTc4NjA4NzY3MiwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoiYmFzaWMiLCJjbGllbnRfaWQiOiIwZTYwYzJkNmI3ODA0NjA1YmViYmZmMDI3OGQzYzQxMSIsInNjb3BlIjpbImJhc2ljIl19.gLz-2elWcyS7LW5QE0-xFAQzFxdOBK3l2eJtUP4HOakeu5481pXBvX7VYcrFh9g9P3ewZymPArw_PB3YCW6zXBtizIf9aFeykkSA7qgLo2JXP8zp_x_9OEYR5hzjp4YW8jQaf7gwqOKnJDTcm4APWptHqTGQTHYY6P4fb9aVkcSfMV9luNJR3MERVAGjlF63ahobf8vK1vecFB5yXvpTkfceGQTmTJ4g6upAxrij_wRtf1B7OcBeGgJhHXcPGaEEx_3Q2ieQBKzCHUHTNFpR0-NzQY-O-UDBBBAIZEmaUq62BEFZtQ_tB2nWJ1-B_KCBWW-PBjyLJd0lI17gr2VqE0H51aog4gn4A9KSrT7XGTOuojf3UW4ajGkM3kopuqoZ6M3wT-ouNe2UJXU9S7QxQ4RVeoc8S8fg6Tgf6f0Zik1mkp213OPWKaZN-HYsO3MNZEcUVqiC5fsLKSkYRYn_UQ0O3vdbRkanlaNAnVNqCu6O0OwCOJe5HOxXQqmT6Vixwg9c8trL3kyqbBgZG6sr7Zlkj9JRZo2riBLesGus2iOc9jyQKbKy3geyq98_eMTbLwjMDngH1dnoYuGmGclLeJF4BqQk6xi6H7b6gLck8TeOglVp1xKRweLLYMtEivL6aEv4qxOb-JWLT7ZSgkrnA-lHaiNK538Htnytx2Z-nYM

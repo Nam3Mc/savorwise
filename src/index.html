@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SavorWise – Recipe Finder</title>
+    <meta name="description" content="Search for recipes by ingredient or dish name." />
+    <meta name="theme-color" content="#10B981" />
+    <meta property="og:title" content="SavorWise – Smart Recipe Finder" />
+    <meta property="og:description" content="Find recipes by ingredient, view cooking instructions, and get nutrition facts." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://savorwise.com" />
+    <meta property="og:image" content="https://savorwise.com/images/og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap" rel="xstylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/larger.css" media="screen and (min-width: 1024px)" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="module" src="js/main.mjs"></script>
+</head>
+<body>
+
+    <header class="navbar"></header>
+
+    <main class="main">
+        <!-- SEARCH SECTION -->
+        <section class="search-section" id="search-container">
+            <form class="search-form" id="search-form">
+                <div class="search-form__input-wrapper">
+                    <input
+                        type="text"
+                        class="search-form__input"
+                        id="search-input"
+                        placeholder="Search by ingredient or recipe name..."
+                        value="salt"
+                        required
+                    />
+                    <button id="search-btn" class="search-form__button" type="button">Search</button>
+                </div>
+                <div class="search-form__options">
+                    <label class="search-form__option">
+                        <input class="search-type" type="radio" name="search-type" value="ingredient" checked />
+                        <span>Ingredient</span>
+                    </label>
+                    <label class="search-form__option">
+                        <input class="search-type"  type="radio" name="search-type" value="recipe" />
+                        <span>Recipe name</span>
+                    </label>
+                </div>
+            </form>
+        </section>
+
+        <!-- RESULTS GRID: Sidebar + Dynamic Results -->
+        <div class="results-grid" id="results-grid">
+            <!-- Sidebar con ingredientes aleatorios -->
+            <aside class="sidebar" id="ingredient-sidebar">
+                <div class="sidebar__content">
+                    <h3 class="sidebar__title">Ingredients</h3>
+                    <ul class="sidebar__ingredient-grid" id="ingredient-grid"></ul>
+                </div>
+            </aside>
+
+            <!-- Contenedor donde se mostrarán las recetas -->
+            <div id="recipe-results" class="recipe-results"></div>
+        </div>
+    </main>
+
+    <footer class="footer"></footer>
+
+</body>
+</html>
