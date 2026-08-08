@@ -1,23 +1,23 @@
 {
-  "name": "savorwise",
-  "version": "1.0.0",
-  "description": "Recipe Finder with Nutritional Facts",
-  "main": "vite.config.js",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "start": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "vite": "^5.4.21"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1"
-  }
+    "name": "savorwise",
+    "version": "1.0.0",
+    "description": "Recipe Finder with Nutritional Facts",
+    "main": "index.html",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview --host 0.0.0.0",
+        "start": "vite preview --host 0.0.0.0",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^17.4.2",
+        "express": "^5.2.1"
+    },
+    "devDependencies": {
+        "vite": "^5.4.21"
+    }
 }
