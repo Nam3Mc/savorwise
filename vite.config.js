@@ -1,22 +1,17 @@
-import { defineConfig } from "vite";
 import { resolve } from "path";
+import { defineConfig } from "vite";
 
 export default defineConfig({
-    root: resolve(__dirname, "src"),
-    envDir: resolve(__dirname),
+  root: "src/",
+  envDir: "../",
 
-    preview: {
-        host: "0.0.0.0",
-        port: 10000,
-        allowedHosts: ["savorwise.onrender.com"],
+  build: {
+    outDir: "../dist",
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "src/index.html"),
+        meal: resolve(__dirname, 'src/meal/index.html')
+      },
     },
-
-    build: {
-        outDir: resolve(__dirname, "dist"),
-        emptyOutDir: true,
-
-        rollupOptions: {
-            input: resolve(__dirname, "src/index.html"),
-        },
-    },
+  },
 });
